@@ -11,7 +11,7 @@ RES_FILES   = winres/TF-icon.res
 MKDIR_P     = mkdir -p
 
 FLAGS       = -O3 -std=c++11
-LIBS        = -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
+LIBS        = -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -L/opt/homebrew/Cellar/sdl2_ttf/2.0.15/lib -L/opt/homebrew/Cellar/sdl2/2.0.16/lib -L/opt/homebrew/Cellar/sdl2_image/2.0.5/lib -L/opt/homebrew/Cellar/sdl2_mixer/2.0.4_2/lib
 
 
 .PHONY: directories
@@ -32,7 +32,7 @@ $(NAME): $(OBJS)
 
 $(OBJ_DIR)/%.o: %.cpp
 	$(CXX) $(FLAGS) -c $< -o $@
-	
+
 clean:
 	@echo clean...
 	@rm -fr build
